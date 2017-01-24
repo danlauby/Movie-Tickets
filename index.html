@@ -1,11 +1,40 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
   <title>movie tickets</title>
+  <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
+  <script src="js/scripts.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+
 </head>
 <body>
-  <li> hasiodfhas </li>
-  <p> laksjkld</p>
+  <div class="container">
+    <h1>Movie ticket prices</h1>
+    <div class="row">
+      <form id="userInput">
+        <div class="form-group">
+          Movies:<select id="movies" class="form-control">
+            <option value="gold">Gold</option>
+            <option value="sleepless">Sleepless</option>
+            <option value="daughter">Daughter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          Time:<select id="time" class="form-control">
+              <option value="am">AM</option>
+              <option value="pm">PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age">Enter age:</label>
+          <input class="form-control" id="age" type="number">
+        </div>
+        <button type="submit" name="button">Find your movie!</button>
+      </form>
+
+    </div>
+  </div>
 </body>
 </html>

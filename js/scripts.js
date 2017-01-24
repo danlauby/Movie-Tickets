@@ -1,4 +1,4 @@
-var ticketPrice = "";
+var ticketPrice = 16;
 
 function Ticket(age,movie,time) {
   this.age = age;
@@ -11,9 +11,21 @@ function Ticket(age,movie,time) {
 // $5-kids day ticket
 
 Ticket.prototype.moviePrice = function(age,time) {
-  if (age >= 50 || <= 10) {
+  if ((age >= 50) || (age <= 10)) {
     return ticketPrice - 2;
   } else if (time === "am") {
     return ticketPrice - 2;
   }
+}
+
+$(function() {
+  $('form#userInput').submit(function(e) {
+    var movie = $('#movies option:selected').val();
+    var time = $('#time option:selected').val();
+    var age = parseInt($("input#age").val());
+    var newTicket = new Ticket(age,time,movie);
+    $("#output").append(newTicket.moviePrice());
+    e.preventDefault();
+  });
+
 });
