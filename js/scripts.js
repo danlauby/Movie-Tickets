@@ -24,7 +24,7 @@ $(function() {
     var time = $('#time option:selected').val();
     var age = parseInt($("input#age").val());
     var newTicket = new Ticket(age,time,movie);
-    $("#output").append(newTicket.moviePrice());
+    $(".output").append(newTicket.moviePrice(age,time));
     e.preventDefault();
   });
 
