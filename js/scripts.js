@@ -47,9 +47,9 @@ $(function() {
     var age = parseInt($("input#age").val());
 
     var newTicket = new Ticket(age, selectedMovie, time);
-    var gold = new Movie('gold', 6.2, 'Kenny Wells, a prospector desperate for a lucky break, teams up with a similarly eager geologist and sets off on a journey to find gold in the uncharted jungle of Indonesia.');
-    var sleepless = new Movie('sleepless', 5.6,"A cop with a connection to the criminal underworld scours a nightclub in search of his kidnapped son.")
-    var daughter = new Movie('daughter', 6.8, "The story follows a man who returns home to discover a long-buried family secret, and whose attempts to put things right threaten the lives of those he left home years before." )
+    var gold = new Movie('Gold', 6.2, 'Kenny Wells, a prospector desperate for a lucky break, teams up with a similarly eager geologist and sets off on a journey to find gold in the uncharted jungle of Indonesia.');
+    var sleepless = new Movie('Sleepless', 5.6,"A cop with a connection to the criminal underworld scours a nightclub in search of his kidnapped son.")
+    var daughter = new Movie('Daughter', 6.8, "The story follows a man who returns home to discover a long-buried family secret, and whose attempts to put things right threaten the lives of those he left home years before." )
     // var movieData = [
     //   ["gold", 6.3, "gold dust"]
     // ];
@@ -68,7 +68,7 @@ $(function() {
     $(".output").empty();
     $(".output").append('<h2>Your movie will cost $ ' + newTicket.moviePrice(age,time) + '</h2>');
     newTicket.movies.forEach(function(movie) {
-      if (movie.movieName === selectedMovie) {
+      if (movie.movieName.toLowerCase() === selectedMovie) {
         $('.output').append('<h3>' + movie.MovieInfo() + ' </h3>');
       }
      });
